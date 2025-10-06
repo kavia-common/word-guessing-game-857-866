@@ -38,7 +38,7 @@
 }
 
 .board-host {
-  width: min(100%, 520px);
+  width: min(100%, 560px);
   min-height: 320px;
   padding: 16px;
   border-radius: var(--radius-md);
@@ -46,10 +46,19 @@
   background: var(--color-surface);
   display: grid;
   gap: 12px;
+  transition: box-shadow var(--transition-base), background-color var(--transition-base);
 }
 
 .app-footer {
   padding: 16px 0 24px;
   color: #6b7280;
   text-align: center;
+}
+
+/* Responsive tweaks */
+@media (max-width: 420px) {
+  .board-host {
+    padding: 12px;
+    gap: 10px;
+  }
 }

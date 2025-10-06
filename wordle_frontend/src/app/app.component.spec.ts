@@ -14,16 +14,18 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'angular' title`, () => {
+  it(`should have the 'Ocean Wordle' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('angular');
+    expect(app.title).toEqual('Ocean Wordle');
   });
 
-  it('should render title', () => {
+  it('should render the header component', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, angular');
+    // Header renders h1 with 'Ocean Wordle'
+    const heading = compiled.querySelector('h1');
+    expect(heading?.textContent).toContain('Ocean Wordle');
   });
 });

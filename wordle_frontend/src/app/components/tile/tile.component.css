@@ -15,7 +15,15 @@
     background-color var(--transition-base),
     border-color var(--transition-fast),
     color var(--transition-base),
-    transform var(--transition-fast);
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+  will-change: transform;
+}
+.tile:hover {
+  box-shadow: var(--shadow-sm);
+}
+.tile:active {
+  transform: translateY(1px) scale(0.98);
 }
 .tile-letter {
   transform: translateZ(0);
@@ -28,4 +36,14 @@
 }
 .status-absent {
   border-color: transparent;
+}
+
+/* Responsive tile sizing for narrow screens */
+@media (max-width: 420px) {
+  .tile {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+  }
 }
