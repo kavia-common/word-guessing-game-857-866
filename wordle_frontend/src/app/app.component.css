@@ -1,16 +1,53 @@
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-color: #ffffff;
+.app-shell {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
 
-h1 {
-  color: #1976d2;
-  font-size: 3rem;
-  font-weight: 500;
-  margin: 0;
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 12px 0;
+  backdrop-filter: saturate(180%) blur(8px);
+  background: color-mix(in srgb, var(--color-surface) 86%, transparent);
+  box-shadow: var(--shadow-sm);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand {
+  font-size: 1.25rem;
+  letter-spacing: 0.02em;
+  color: var(--color-text);
+}
+
+.app-main {
+  display: grid;
+  align-items: start;
+  padding: 24px 0 32px;
+}
+
+.main-inner {
+  display: grid;
+  justify-items: center;
+}
+
+.board-host {
+  width: min(100%, 520px);
+  min-height: 320px;
+  padding: 16px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  background: var(--color-surface);
+}
+
+.app-footer {
+  padding: 16px 0 24px;
+  color: #6b7280;
   text-align: center;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }

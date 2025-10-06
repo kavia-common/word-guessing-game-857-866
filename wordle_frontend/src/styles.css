@@ -1,12 +1,148 @@
-/* Global styles for minimalistic design */
-* {
-  margin: 0;
-  padding: 0;
+/* Ocean Professional Theme - Global Styles and Variables */
+
+/* CSS Variables */
+:root {
+  --color-primary: #2563EB;
+  --color-secondary: #F59E0B;
+  --color-success: #F59E0B;
+  --color-error: #EF4444;
+  --color-bg: #f9fafb;
+  --color-surface: #ffffff;
+  --color-text: #111827;
+  --color-absent: #E5E7EB;
+
+  --radius-md: 12px;
+  --radius-sm: 8px;
+
+  --shadow-sm: 0 1px 2px rgba(17,24,39,0.06), 0 1px 1px rgba(17,24,39,0.04);
+  --shadow-md: 0 6px 12px rgba(17,24,39,0.08);
+
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+}
+
+/* Reset/Normalize essentials */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 html, body {
   height: 100%;
-  background-color: #ffffff;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  /* Subtle linear gradient from blue-500/10 to gray-50 over base */
+  background-image:
+    linear-gradient(180deg, rgba(59,130,246,0.10), rgba(249,250,251,0.9));
+}
+
+/* Base typography */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-text);
+  line-height: 1.2;
+  margin: 0;
+}
+
+p {
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Utility classes */
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.center {
+  display: grid;
+  place-items: center;
+}
+
+.surface {
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Buttons baseline */
+button {
+  font: inherit;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-absent);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+/* Status colors for tiles/keys */
+.status-correct {
+  background-color: var(--color-primary); /* Blue accent for correct (theme choice) */
+  color: white;
+}
+
+.status-present {
+  background-color: var(--color-success); /* Amber for present */
+  color: #1f2937;
+}
+
+.status-absent {
+  background-color: var(--color-absent);
+  color: #374151;
+}
+
+/* Toast outlet baseline */
+#toast-outlet {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: grid;
+  gap: 8px;
+  width: min(92vw, 520px);
+  pointer-events: none;
+}
+
+/* Links */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+a:hover {
+  color: #1d4ed8;
+}
+
+/* Forms */
+input {
+  font: inherit;
+}
+
+/* Accessibility helpers */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap; /* added line */
 }
