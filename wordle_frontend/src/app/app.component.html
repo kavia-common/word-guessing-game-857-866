@@ -1,23 +1,16 @@
 <div class="app-shell">
-  <header class="app-header surface">
-    <div class="container header-inner">
-      <h1 class="brand">Ocean Wordle</h1>
-    </div>
-  </header>
+  <app-header class="app-header"></app-header>
 
   <main class="app-main">
     <div class="container main-inner">
       <section class="board-host surface" aria-label="Game board host">
-        <!-- components will mount here in later steps -->
+        <app-board></app-board>
+        <app-keyboard></app-keyboard>
       </section>
     </div>
   </main>
 
-  <footer class="app-footer">
-    <div class="container footer-inner">
-      <small>Guess the 5-letter word in 5 tries</small>
-    </div>
-  </footer>
+  <app-footer class="app-footer"></app-footer>
 
-  <div id="toast-outlet" aria-live="polite" aria-atomic="true"></div>
+  <app-toast></app-toast>
 </div>

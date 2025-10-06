@@ -1,0 +1,18 @@
+.footer {
+  padding: 16px 0 24px;
+  color: #6b7280;
+  text-align: center;
+}
+.footer-inner {
+  display: grid;
+  gap: 8px;
+  justify-items: center;
+}
+.try-again {
+  background: var(--color-primary);
+  color: #fff;
+  border-color: transparent;
+}
+.try-again:hover {
+  box-shadow: var(--shadow-sm);
+}

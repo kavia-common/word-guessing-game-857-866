@@ -1,0 +1,27 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 12px 0;
+  backdrop-filter: saturate(180%) blur(8px);
+  background: color-mix(in srgb, var(--color-surface) 86%, transparent);
+  box-shadow: var(--shadow-sm);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+}
+.brand {
+  font-size: 1.25rem;
+  letter-spacing: 0.02em;
+  color: var(--color-text);
+}
+.spacer {
+  flex: 1;
+}
+.restart-btn {
+  border-color: #e5e7eb;
+}
+.restart-btn:hover {
+  box-shadow: var(--shadow-sm);
+}

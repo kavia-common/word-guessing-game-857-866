@@ -1,0 +1,22 @@
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="message">
+      <ng-container *ngIf="(status$ | async) as status">
+        <ng-container [ngSwitch]="status">
+          <p *ngSwitchCase="'playing'">{{ message$ | async }}</p>
+          <p *ngSwitchCase="'won'">{{ message$ | async }}</p>
+          <p *ngSwitchCase="'lost'">
+            {{ message$ | async }}
+            <ng-container *ngIf="(targetWhenLost$ | async) as target"> The word was <strong>{{ target | uppercase }}</strong>.</ng-container>
+          </p>
+        </ng-container>
+      </ng-container>
+    </div>
+
+    <div class="actions" *ngIf="(status$ | async) !== 'playing'">
+      <button type="button" (click)="restart()" aria-label="Try again with a new word" class="try-again">
+        Try Again
+      </button>
+    </div>
+  </div>
+</footer>

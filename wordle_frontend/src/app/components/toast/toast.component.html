@@ -1,0 +1,5 @@
+<div id="toast-outlet" aria-live="polite" aria-atomic="true">
+  <div *ngFor="let t of toasts; trackBy: trackById" class="toast" role="status">
+    <span>{{ t.text }}</span>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+.tile {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--color-absent);
+  border-radius: 10px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0.02em;
+  user-select: none;
+  transition:
+    background-color var(--transition-base),
+    border-color var(--transition-fast),
+    color var(--transition-base),
+    transform var(--transition-fast);
+}
+.tile-letter {
+  transform: translateZ(0);
+}
+.status-correct {
+  border-color: transparent;
+}
+.status-present {
+  border-color: transparent;
+}
+.status-absent {
+  border-color: transparent;
+}

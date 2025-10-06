@@ -1,0 +1,8 @@
+<div class="row" role="row" aria-label="Guess row">
+  <app-tile
+    *ngFor="let t of tiles; let i = index; trackBy: trackByIndex"
+    [letter]="t.letter"
+    [status]="t.status"
+    [position]="i"
+  />
+</div>

@@ -1,0 +1,11 @@
+<div
+  class="tile"
+  [class.status-correct]="status === 'correct'"
+  [class.status-present]="status === 'present'"
+  [class.status-absent]="status === 'absent'"
+  role="gridcell"
+  [attr.aria-colindex]="position + 1"
+  [attr.aria-label]="letter ? letter.toUpperCase() : 'Empty'"
+>
+  <span class="tile-letter">{{ letter | uppercase }}</span>
+</div>

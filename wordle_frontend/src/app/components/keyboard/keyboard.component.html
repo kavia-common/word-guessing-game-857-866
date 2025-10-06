@@ -1,0 +1,35 @@
+<div class="keyboard" role="region" aria-label="On-screen keyboard">
+  <div class="kb-row">
+    <button
+      *ngFor="let k of row1; trackBy: trackByLabel"
+      class="key"
+      type="button"
+      [ngClass]="statusClass((usedKeyStatuses$ | async)!, k.label)"
+      (click)="onKeyPress(k)"
+      [attr.aria-label]="k.label.toUpperCase()"
+    >{{ k.label | uppercase }}</button>
+  </div>
+
+  <div class="kb-row">
+    <button
+      *ngFor="let k of row2; trackBy: trackByLabel"
+      class="key"
+      type="button"
+      [ngClass]="statusClass((usedKeyStatuses$ | async)!, k.label)"
+      (click)="onKeyPress(k)"
+      [attr.aria-label]="k.label.toUpperCase()"
+    >{{ k.label | uppercase }}</button>
+  </div>
+
+  <div class="kb-row">
+    <button
+      *ngFor="let k of row3; trackBy: trackByLabel"
+      class="key"
+      type="button"
+      [class.key-wide]="k.wide"
+      [ngClass]="k.code ? '' : statusClass((usedKeyStatuses$ | async)!, k.label)"
+      (click)="onKeyPress(k)"
+      [attr.aria-label]="k.code ? k.label : k.label.toUpperCase()"
+    >{{ k.label }}</button>
+  </div>
+</div>

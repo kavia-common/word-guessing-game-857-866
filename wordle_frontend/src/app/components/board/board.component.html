@@ -1,0 +1,18 @@
+<div class="board" role="grid" aria-label="Game board with guesses">
+  <ng-container *ngIf="(attempts$ | async) as attempts">
+    <ng-container *ngIf="(currentInput$ | async) as currentInput">
+      <!-- Render existing attempts -->
+      <app-row *ngFor="let r of attempts; let i = index; trackBy: trackByIndex" [row]="r" />
+
+      <!-- Render current input row only if still playing and room left -->
+      <ng-container *ngIf="attempts.length < maxRows">
+        <app-row [row]="null" [currentInput]="currentInput" />
+      </ng-container>
+
+      <!-- Render remaining empty rows to keep board height stable -->
+      <ng-container *ngFor="let _ of buildPlaceholders(attempts.length); let j = index">
+        <app-row [row]="null" [currentInput]="''" />
+      </ng-container>
+    </ng-container>
+  </ng-container>
+</div>
